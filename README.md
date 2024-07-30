@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Quests (change the name later)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gamified todo list. Tasks are quests in a fantasy setting, existing quests list - no need to create a quest and evaluate the rewards
 
-Currently, two official plugins are available:
+TODO:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Auth page
+-   Main page
+    -   Character element
+    -   Current quests
+    -   Popular quests
+    -   Recently completed quests
+    -   Daily stats graph
+    -   Chat (not in the near future)
+-   Quests page
+    -   Take a task modal window
+        -   Search for a task / order by popularity
+    -   Current tasks tab
+    -   Recently completed tasks tab
+-   Profile
+    -   TODO todos
+-   Settings
+    -   TODO todos
+-   Task details modal window - opened from main page popular/current/recent and from take a task modal
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Backend will be created with a Supabase, so no backend TODOs for now, not sure how to organize a work there
