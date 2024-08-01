@@ -3,6 +3,12 @@ import { supabase } from '../supabase';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { setUser } from '../features/user/userSlice';
+import WindowIcon from '@mui/icons-material/Window';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import LogoutIcon from '@mui/icons-material/Logout';
+import LoginIcon from '@mui/icons-material/Login';
+import '../assets/scss/navbar.scss';
 
 const Navbar = () => {
     const user = useSelector((state: RootState) => state.user.value);
@@ -13,20 +19,49 @@ const Navbar = () => {
         if (error) return error;
         dispatch(setUser(null));
     };
+
     return (
         <div className="navbar">
-            <ul>
-                <li>
-                    <Link to="">Main page</Link>
-                </li>
-                <li>
-                    <Link to="quests">Quests</Link>
-                </li>
-                <li>Profile</li>
-                <li onClick={handleLogout}>
-                    <Link to="/login">Logout</Link>
-                </li>
-            </ul>
+            {user ? (
+                <ul>
+                    <li className="navbar-icon active">
+                        <Link to="">
+                            <WindowIcon sx={{ color: 'white' }} />
+                        </Link>
+                    </li>
+                    <li className="navbar-icon">
+                        <Link to="quests">
+                            <FormatListBulletedIcon sx={{ color: 'white' }} />
+                        </Link>
+                    </li>
+                    <li className="navbar-icon">
+                        <AccountBoxIcon sx={{ color: 'white' }} />
+                    </li>
+                    <li
+                        onClick={handleLogout}
+                        className="navbar-icon"
+                        style={{ marginTop: 'auto' }}
+                    >
+                        <Link to="/login">
+                            <LogoutIcon sx={{ color: 'white' }} />
+                        </Link>
+                    </li>
+                </ul>
+            ) : (
+                <ul>
+                    <li className="navbar-icon active">
+                        <Link to="/login">
+                            <LoginIcon sx={{ color: 'white' }} />
+                        </Link>
+                    </li>
+                    {/* FIXME change icon to register */}
+                    <li className="navbar-icon">
+                        <Link to="/register">
+                            <LoginIcon sx={{ color: 'white' }} />
+                        </Link>
+                    </li>
+                </ul>
+            )}
         </div>
     );
 };

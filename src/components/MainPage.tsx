@@ -8,6 +8,7 @@ import Statistics from './Statistics';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
+import '../assets/scss/main-page.scss';
 
 const MainPage = () => {
     const user = useSelector((state: RootState) => state.user.value);

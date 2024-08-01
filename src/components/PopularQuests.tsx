@@ -3,7 +3,7 @@ import { IQuest } from '../types';
 import { supabase } from '../supabase';
 
 const getQuests = async () => {
-    const { data, error } = await supabase.from('quests').select('title');
+    const { data, error } = await supabase.from('quests').select();
     if (!error) return data;
 
     console.log(error);
@@ -11,16 +11,16 @@ const getQuests = async () => {
 };
 
 const PopularQuests = () => {
-    const [quests, setQuests] = useState<IQuest[]>([]);
+    const [quests, setQuests] = useState<IQuest[] | undefined>([]);
 
     useEffect(() => {
         getQuests().then((response) => setQuests(response));
     }, []);
     return (
-        <div className="popular">
-            <h2 className="tile-title">Popular quests</h2>
-            {quests.map((quest) => (
-                <div className="quest-tile">{quest.title}</div>
+        <div className="popular block">
+            <h2 className="block__title">Popular quests</h2>
+            {quests?.map((quest) => (
+                <div className="block__quest">{quest.title}</div>
             ))}
         </div>
     );

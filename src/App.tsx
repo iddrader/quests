@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Login from './components/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './store';
+import Register from './components/Register';
 
 function App() {
     const user = useSelector((state: RootState) => state.user.value);
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/" element={<MainPage />} />
                 <Route path="/quests" element={<QuestsList />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
         </div>
     );

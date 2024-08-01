@@ -1,5 +1,5 @@
 const CharacterModule = () => {
-    return <div className="character">character module</div>;
+    return <div className="character block"></div>;
 };
 
 export default CharacterModule;
