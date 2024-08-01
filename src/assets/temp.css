@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif !important;
+}
+
 .temp-block {
     padding: 3rem;
     border: 3px solid red;
@@ -17,7 +21,22 @@
 .popular {
     border: 3px solid red;
     grid-column: 2 / 3;
-    padding: 3rem;
+    padding: 0.25rem;
+    overflow: scroll;
+}
+
+.tile-title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.quest-tile {
+    background-color: #454545;
+    padding: 0.25rem;
+    border-radius: 6px;
+    margin-top: 10px;
+    color: white;
+    width: 90%;
 }
 
 .recent {
@@ -65,4 +84,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+}
+
+.navbar li {
+    padding: 0.5rem;
+    font-weight: 600;
 }
