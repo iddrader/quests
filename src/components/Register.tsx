@@ -1,5 +1,5 @@
 import { supabase } from '../supabase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../features/user/userSlice';
 
@@ -30,21 +30,49 @@ const Register = () => {
     };
 
     return (
-        <div>
-            <form action="" onSubmit={handleRegister}>
-                <label>
-                    Email
-                    <input type="text" name="username" />
-                </label>
-                <label>
-                    Password
-                    <input type="text" name="password" />
-                </label>
-                <label>
-                    Confirm Password
-                    <input type="text" name="password-confirm" />
-                </label>
-                <button type="submit">Submit</button>
+        <div className="auth-container">
+            <form
+                action=""
+                onSubmit={handleRegister}
+                className="auth-form"
+                style={{ gap: '1rem' }}
+            >
+                <h2>Enchanted Errands</h2>
+                <p>
+                    Enlist to forge your destiny! Create an account to chronicle
+                    your quests, track your triumphs, and seamlessly navigate
+                    your journey through our enchanted realm.
+                </p>
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Inscribe thy email here"
+                />
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="@Invent thy heroic title"
+                />
+                <input
+                    type="text"
+                    name="password"
+                    placeholder="Reveal thy secret password"
+                />
+                <input
+                    type="text"
+                    name="password-confirm"
+                    placeholder="Echo thy secret password"
+                />
+                <button type="submit">Enter the realm</button>
+                <div className="auth-hr">
+                    <div className="first"></div>
+                    <div className="second"></div>
+                    <div className="third"></div>
+                </div>
+                <p className="auth-link">
+                    Returning knight?{' '}
+                    <Link to="/login">Continue your journey here</Link>.
+                </p>
             </form>
         </div>
     );

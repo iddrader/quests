@@ -54,12 +54,6 @@ const Navbar = () => {
                             <LoginIcon sx={{ color: 'white' }} />
                         </Link>
                     </li>
-                    {/* FIXME change icon to register */}
-                    <li className="navbar-icon">
-                        <Link to="/register">
-                            <LoginIcon sx={{ color: 'white' }} />
-                        </Link>
-                    </li>
                 </ul>
             )}
         </div>

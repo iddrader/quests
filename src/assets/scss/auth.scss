@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+.auth-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(69, 69, 66, 0.96);
+    color: white;
+
+    padding: 8rem 1rem;
+
+    .auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 500px;
+
+        h2 {
+            font-family: 'Allura', sans-serif;
+            font-weight: 400;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input,
+        button {
+            padding: 1.5rem;
+            border-radius: 6px;
+            background-color: rgba(80, 80, 80, 1);
+            border: none;
+            outline: none;
+            font-size: 17px;
+            font-weight: 600;
+            width: 70%;
+            margin: auto;
+            font-family: 'Inter';
+        }
+
+        button {
+            background-color: rgba(116, 140, 159, 1);
+            color: white;
+            width: 80%;
+        }
+
+        .auth-link {
+            color: rgba(214, 214, 214, 0.72);
+            a {
+                color: white;
+            }
+        }
+
+        .auth-hr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .first,
+            .second,
+            .third {
+                background-color: white;
+            }
+
+            .first,
+            .third {
+                height: 1px;
+                width: 160px;
+            }
+
+            .second {
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

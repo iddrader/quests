@@ -6,7 +6,7 @@
 .popular {
     grid-column: 2 / 3;
     padding: 0.25rem;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .tile-title {

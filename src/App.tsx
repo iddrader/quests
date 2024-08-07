@@ -8,6 +8,8 @@ import Login from './components/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './store';
 import Register from './components/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     const user = useSelector((state: RootState) => state.user.value);
@@ -17,15 +19,18 @@ function App() {
     }, []);
 
     return (
-        <div className="container">
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/quests" element={<QuestsList />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-            </Routes>
-        </div>
+        <>
+            <div className="container">
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/quests" element={<QuestsList />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                </Routes>
+            </div>
+            <ToastContainer />
+        </>
     );
 }
 

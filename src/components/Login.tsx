@@ -1,7 +1,9 @@
 import { supabase } from '../supabase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../features/user/userSlice';
+import { toast } from 'react-toastify';
+import '../assets/scss/auth.scss';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -16,6 +18,7 @@ const Login = () => {
         if (error) {
             alert('Wrong email or password');
             console.log(error);
+            toast.error(error.message);
             return error;
         }
         if (data) {
@@ -26,17 +29,36 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <form action="" onSubmit={handleLogin}>
-                <label>
-                    Login
-                    <input type="text" name="email" />
-                </label>
-                <label>
-                    Password
-                    <input type="text" name="password" />
-                </label>
-                <button type="submit">Submit</button>
+        <div className="auth-container">
+            <form action="" onSubmit={handleLogin} className="auth-form">
+                <h2>Enchanted Errands</h2>
+                <p>
+                    Reclaim your place in the realm. Enter your sacred chamber
+                    to resume your quests and manage your legendary duties.
+                </p>
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Inscribe thy email here"
+                    required
+                />
+                <input
+                    type="text"
+                    name="password"
+                    placeholder="Reveal thy secret password"
+                    required
+                />
+
+                <button type="submit">Enter the realm</button>
+                <div className="auth-hr">
+                    <div className="first"></div>
+                    <div className="second"></div>
+                    <div className="third"></div>
+                </div>
+                <p className="auth-link">
+                    Unregistered adventurer?{' '}
+                    <Link to="/register">Enlist now</Link>
+                </p>
             </form>
         </div>
     );
